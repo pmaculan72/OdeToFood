@@ -2,7 +2,7 @@
 
 namespace OdeToFood.Controllers
 {
-    [Route("[controller]/[action]"))]
+    [Route("[controller]/[action]")]
     public class AboutController
     {
         public string Phone()
