@@ -31,13 +31,14 @@ namespace OdeToFood
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.Run(async (context) =>
             {
-                throw new Exception("error!");
 
                 var greeting = greeter.GetMessageOfTheDay();
-                await context.Response.WriteAsync(greeting);
+                await context.Response.WriteAsync($"{greeting}  {env.EnvironmentName}");
             });
         }
     }
