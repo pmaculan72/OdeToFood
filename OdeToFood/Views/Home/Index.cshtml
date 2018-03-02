@@ -4,19 +4,13 @@
     ViewBag.Title = "Home Page";
 }
 
-<table>
-    <h1>All Restaurants</h1>
-    @foreach (var restaurant in Model.Restaurants)
-    {
-        <tr>
-            <td>@restaurant.Id</td>
-            <td>@restaurant.Name</td>
-            <td>
-                <a asp-action="Details" asp-route-id="@restaurant.Id">More</a>
-            </td>
-        </tr>
-    }
-</table>
+<h1>All Restaurants</h1>
+
+@foreach (var restaurant in Model.Restaurants)
+{
+    @Html.Partial("_Summary", restaurant)
+}
+
 <a asp-action="Create">Create restaurant</a>
 
 @section footer {

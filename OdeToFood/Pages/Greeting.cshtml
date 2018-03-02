@@ -1,6 +1,19 @@
-﻿@page
+﻿@page "{name}"
 
-@inject IGreeter Greeter
+@model GreetingModel
 
 
-<div>@Greeter.GetMessageOfTheDay()</div>
+<h1>All Restaurants</h1>
+
+<table>
+    @foreach (var restaurant in Model.Restaurants)
+    {
+        <tr>
+            <td>@restaurant.Id</td>
+            <td>@restaurant.Name</td>
+        </tr>
+    }
+</table>
+
+<div>@Model.CurrentGreeting</div>
+

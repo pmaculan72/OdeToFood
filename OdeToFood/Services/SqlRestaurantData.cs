@@ -32,5 +32,12 @@ namespace OdeToFood.Services
         {
             return _context.Restaurants.OrderBy(r => r.Name);
         }
+
+        public Restaurant Update(Restaurant restaurant)
+        {
+            _context.Update(restaurant);
+            _context.SaveChanges();
+            return restaurant;
+        }
     }
 }
