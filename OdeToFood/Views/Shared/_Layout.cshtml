@@ -9,8 +9,10 @@
     <div>
         @RenderBody()
     </div>
-    <div>
+    <footer>
         @RenderSection("footer", required: false)
-    </div>
+        <!--await Component.InvokeAsync("Greeter")-->
+        <vc:greeter></vc:greeter>
+    </footer>
 </body>
 </html>
