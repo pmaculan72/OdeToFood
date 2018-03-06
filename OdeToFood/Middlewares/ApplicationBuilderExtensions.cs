@@ -16,7 +16,7 @@ namespace Microsoft.AspNetCore.Builder
             options.RequestPath = "/node_modules";
             options.FileProvider = fileProvider;
 
-            app.UseStaticFiles();
+            app.UseStaticFiles(options);
 
             return app;
         }
